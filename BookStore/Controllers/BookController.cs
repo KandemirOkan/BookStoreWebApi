@@ -1,4 +1,5 @@
 using BookStoreWebApi.BookOperations.Commands.CreateBook;
+using BookStoreWebApi.BookOperations.Commands.DeleteBook;
 using BookStoreWebApi.BookOperations.Commands.UpdateBook;
 using BookStoreWebApi.BookOperations.Queries.GetBooks;
 using BookStoreWebApi.DBOperations;
@@ -65,11 +66,15 @@ public class BookController : ControllerBase
     [HttpDelete("{id}")]
     public IActionResult DeleteBook(int id)
     {
-        var book = context.Books.SingleOrDefault(x=>x.Id==id);
-        if(book is null)
-            return BadRequest();
-        context.Books.Remove(book);
-        context.SaveChanges();
-        return Ok();
+        DeleteBookCommand command = new DeleteBookCommand(context);
+        try
+        {
+            command.Handle(id);
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(ex.Message);
+        }
+            return Ok();
     }
 }
