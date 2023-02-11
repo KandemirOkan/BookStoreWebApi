@@ -1004,11 +1004,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Okan\\Desktop\\Patika\\BookStore\\BookStoreWebApi\\BookStoreWebApi.csproj",
+      "projectUniqueName": "C:\\Users\\Okan\\Documents\\GitHub\\BookStoreWebApi\\BookStore\\BookStoreWebApi.csproj",
       "projectName": "BookStoreWebApi",
-      "projectPath": "C:\\Users\\Okan\\Desktop\\Patika\\BookStore\\BookStoreWebApi\\BookStoreWebApi.csproj",
+      "projectPath": "C:\\Users\\Okan\\Documents\\GitHub\\BookStoreWebApi\\BookStore\\BookStoreWebApi.csproj",
       "packagesPath": "C:\\Users\\Okan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Okan\\Desktop\\Patika\\BookStore\\BookStoreWebApi\\obj\\",
+      "outputPath": "C:\\Users\\Okan\\Documents\\GitHub\\BookStoreWebApi\\BookStore\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
