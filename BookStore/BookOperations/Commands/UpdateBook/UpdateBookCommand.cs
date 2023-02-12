@@ -23,6 +23,7 @@ namespace BookStoreWebApi.BookOperations.Commands.UpdateBook
             book.GenreId = Model.GenreId != default ? Model.GenreId : book.GenreId;
             book.PageCount = Model.PageCount != default ? Model.PageCount : book.PageCount;
             book.Title = Model.Title != default ? Model.Title : book.Title;
+            book.Author = Model.Author != default ? Model.Author : book.Author;
             _dbContext.SaveChanges();
         }
     }
@@ -31,5 +32,7 @@ namespace BookStoreWebApi.BookOperations.Commands.UpdateBook
         public string? Title { get; set; }
         public int GenreId { get; set; }
         public int PageCount { get; set; }
+
+        public string? Author { get; set; }
     }
 }

@@ -1,3 +1,4 @@
+using AutoMapper;
 using BookStoreWebApi.Common;
 using BookStoreWebApi.DBOperations;
 using Microsoft.EntityFrameworkCore;
@@ -7,27 +8,21 @@ namespace BookStoreWebApi.BookOperations.Queries.GetBooks
     public class GetBooksById
     {
         private readonly BookStoreDbContext _dbContext;
+        private readonly IMapper _mapper;
 
-        public GetBooksById(BookStoreDbContext dbContext)
+        public GetBooksById(BookStoreDbContext dbContext,IMapper mapper)
         {
             _dbContext = dbContext;
+            _mapper = mapper;
         }
         public BooksViewIdModel Handle(int id)
         {
-            var vm = new BooksViewIdModel();
             var book = _dbContext.Books.Where(x=>x.Id==id).SingleOrDefault();
             if (book is null)
             {
                 throw new InvalidOperationException("Aradığınız Id'de kitap bulunmamaktadır.");
             }
-           new BooksViewIdModel();
-           {
-             vm.Title = book.Title;
-             vm.Genre = ((GenreEnum)book.GenreId).ToString();
-             vm.PageCount = book.PageCount;
-             vm.Author = book.Author;
-           };
-           
+            BooksViewIdModel vm = _mapper.Map<BooksViewIdModel>(book);
            return vm;
         }
     }
