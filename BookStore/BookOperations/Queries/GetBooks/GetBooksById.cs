@@ -8,6 +8,7 @@ namespace BookStoreWebApi.BookOperations.Queries.GetBooks
     public class GetBooksById
     {
         private readonly BookStoreDbContext _dbContext;
+        public int BookId { get; set; }
         private readonly IMapper _mapper;
 
         public GetBooksById(BookStoreDbContext dbContext,IMapper mapper)
@@ -15,15 +16,15 @@ namespace BookStoreWebApi.BookOperations.Queries.GetBooks
             _dbContext = dbContext;
             _mapper = mapper;
         }
-        public BooksViewIdModel Handle(int id)
+        public BooksViewIdModel Handle()
         {
-            var book = _dbContext.Books.Where(x=>x.Id==id).SingleOrDefault();
+            var book = _dbContext.Books.Where(x=>x.Id==BookId).SingleOrDefault();
             if (book is null)
             {
                 throw new InvalidOperationException("Aradığınız Id'de kitap bulunmamaktadır.");
             }
             BooksViewIdModel vm = _mapper.Map<BooksViewIdModel>(book);
-           return vm;
+            return vm;
         }
     }
     public class BooksViewIdModel

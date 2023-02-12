@@ -13,9 +13,9 @@ namespace BookStoreWebApi.BookOperations.Commands.UpdateBook
         {
             _dbContext = dbContext;
         }
-        public void Handle(int _id)
+        public void Handle()
         {
-            var book = _dbContext.Books.SingleOrDefault(x=>x.Id==_id);
+            var book = _dbContext.Books.SingleOrDefault(x=>x.Id==BookId);
             if (book is null)
             {
                 throw new InvalidOperationException("Güncellemek istediğiniz kitap id'si databasede bulunmuyor.");

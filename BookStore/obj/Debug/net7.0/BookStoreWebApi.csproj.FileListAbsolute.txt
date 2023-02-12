@@ -72,3 +72,4 @@ C:\Users\Okan\Documents\GitHub\BookStoreWebApi\BookStore\obj\Debug\net7.0\BookSt
 C:\Users\Okan\Documents\GitHub\BookStoreWebApi\BookStore\obj\Debug\net7.0\ref\BookStoreWebApi.dll
 C:\Users\Okan\Documents\GitHub\BookStoreWebApi\BookStore\bin\Debug\net7.0\AutoMapper.dll
 C:\Users\Okan\Documents\GitHub\BookStoreWebApi\BookStore\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\Okan\Documents\GitHub\BookStoreWebApi\BookStore\bin\Debug\net7.0\FluentValidation.dll

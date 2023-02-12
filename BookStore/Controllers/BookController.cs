@@ -4,6 +4,7 @@ using BookStoreWebApi.BookOperations.Commands.DeleteBook;
 using BookStoreWebApi.BookOperations.Commands.UpdateBook;
 using BookStoreWebApi.BookOperations.Queries.GetBooks;
 using BookStoreWebApi.DBOperations;
+using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BookStoreWebApi.Controllers;
@@ -32,7 +33,19 @@ public class BookController : ControllerBase
     public IActionResult GetBooksById(int id)
     {
         GetBooksById query = new GetBooksById(context,_mapper);
-        var result = query.Handle(id);
+        BooksViewIdModel result;
+        try
+        {
+            query.BookId = id;
+            GetBooksByIdValidator validator = new GetBooksByIdValidator();
+            validator.ValidateAndThrow(query);
+            result = query.Handle();
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(ex.Message);
+        }
+
         return Ok(result);
     }
     [HttpPost]
@@ -42,6 +55,8 @@ public class BookController : ControllerBase
         try
         {
         command.Model = newBook;
+        CreateBookCommandValidator validator = new CreateBookCommandValidator();
+        validator.ValidateAndThrow(command);
         command.Handle();
         }
         catch (Exception ex)
@@ -58,7 +73,9 @@ public class BookController : ControllerBase
         {
             command.BookId = id;
             command.Model = updatebook;
-            command.Handle(id); 
+            UpdateBookCommandValidator validator = new UpdateBookCommandValidator();
+            validator.ValidateAndThrow(command);
+            command.Handle(); 
         }
         catch (Exception ex)
         {            
@@ -72,7 +89,10 @@ public class BookController : ControllerBase
         DeleteBookCommand command = new DeleteBookCommand(context);
         try
         {
-            command.Handle(id);
+            command.BookId=id;
+            DeleteBookCommandValidator validator = new DeleteBookCommandValidator();
+            validator.ValidateAndThrow(command);
+            command.Handle();
         }
         catch (Exception ex)
         {
