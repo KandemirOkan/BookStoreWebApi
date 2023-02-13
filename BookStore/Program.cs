@@ -1,5 +1,6 @@
 using System.Reflection;
 using BookStoreWebApi.DBOperations;
+using BookStoreWebApi.Middlewares;
 using Microsoft.EntityFrameworkCore;
 
 internal class Program
@@ -35,6 +36,8 @@ internal class Program
         app.UseHttpsRedirection();
 
         app.UseAuthorization();
+
+        app.UseCustomExceptionMiddle();
 
         app.MapControllers();
 
