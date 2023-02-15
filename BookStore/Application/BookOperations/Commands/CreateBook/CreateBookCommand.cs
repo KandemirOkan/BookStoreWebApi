@@ -1,8 +1,9 @@
 using AutoMapper;
 using BookStoreWebApi.DBOperations;
+using BookStoreWebApi.Entities;
 using Microsoft.AspNetCore.Mvc;
 
-namespace BookStoreWebApi.BookOperations.Commands.CreateBook
+namespace BookStoreWebApi.Application.BookOperations.Commands.CreateBook
 {
     public class CreateBookCommand
     {

@@ -1,7 +1,7 @@
 using BookStoreWebApi.DBOperations;
 using Microsoft.AspNetCore.Mvc;
 
-namespace BookStoreWebApi.BookOperations.Commands.UpdateBook
+namespace BookStoreWebApi.Application.BookOperations.Commands.UpdateBook
 {
     public class UpdateBookCommand
     {

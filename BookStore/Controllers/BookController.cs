@@ -1,8 +1,8 @@
 using AutoMapper;
-using BookStoreWebApi.BookOperations.Commands.CreateBook;
-using BookStoreWebApi.BookOperations.Commands.DeleteBook;
-using BookStoreWebApi.BookOperations.Commands.UpdateBook;
-using BookStoreWebApi.BookOperations.Queries.GetBooks;
+using BookStoreWebApi.Application.BookOperations.Commands.CreateBook;
+using BookStoreWebApi.Application.BookOperations.Commands.DeleteBook;
+using BookStoreWebApi.Application.BookOperations.Commands.UpdateBook;
+using BookStoreWebApi.Application.BookOperations.Queries.GetBooks;
 using BookStoreWebApi.DBOperations;
 using FluentValidation;
 using Microsoft.AspNetCore.Mvc;

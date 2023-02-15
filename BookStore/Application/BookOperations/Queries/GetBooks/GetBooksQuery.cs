@@ -1,9 +1,10 @@
 using AutoMapper;
 using BookStoreWebApi.Common;
 using BookStoreWebApi.DBOperations;
+using BookStoreWebApi.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace BookStoreWebApi.BookOperations.Queries.GetBooks
+namespace BookStoreWebApi.Application.BookOperations.Queries.GetBooks
 {
     public class GetBooksQuery
     {

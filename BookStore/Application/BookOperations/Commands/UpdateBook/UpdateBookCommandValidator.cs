@@ -1,10 +1,10 @@
 using FluentValidation;
 
-namespace BookStoreWebApi.BookOperations.Commands.CreateBook
+namespace BookStoreWebApi.Application.BookOperations.Commands.UpdateBook
 {
-    public class CreateBookCommandValidator : AbstractValidator<CreateBookCommand>
+    public class UpdateBookCommandValidator : AbstractValidator<UpdateBookCommand>
     {
-        public CreateBookCommandValidator()
+        public UpdateBookCommandValidator()
         {
             RuleFor(x=>x.Model.Author).NotEmpty().MinimumLength(3);
             RuleFor(x=>x.Model.PageCount).GreaterThan(50);

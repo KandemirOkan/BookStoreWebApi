@@ -1,4 +1,4 @@
-using BookStoreWebApi;
+using BookStoreWebApi.Entities;
 using BookStoreWebApi.DBOperations;
 using Microsoft.EntityFrameworkCore;
 
@@ -14,6 +14,18 @@ public class DataGenerator
             {
                 return;   // Data was already seeded
             }
+            
+            context.Genres.AddRange{
+                new Genre{
+                    Name="Science Ficton"
+                },
+                new Genre{
+                    Name="Noval"
+                },
+                new Genre{
+                    Name="History"
+                }                    
+            };
 
             context.Books.AddRange(
                new Book{
