@@ -7,7 +7,7 @@ using BookStoreWebApi.DBOperations;
 using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
 
-namespace BookStoreWebApi.Controllers;
+namespace BookStoreWebApi.Controllers.BookController;
 
 [ApiController]
 [Route("[controller]")]

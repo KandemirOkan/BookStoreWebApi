@@ -2,7 +2,7 @@ using AutoMapper;
 using BookStoreWebApi.DBOperations;
 using BookStoreWebApi.Entities;
 
-namespace BookStoreWebApi.Application.GenreOperations.Commands
+namespace BookStoreWebApi.Application.GenreOperations.Commands.CreateGenre
 {
     public class CreateGenreCommand
     {
