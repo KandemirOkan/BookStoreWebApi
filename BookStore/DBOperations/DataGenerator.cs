@@ -31,22 +31,38 @@ public class DataGenerator
                new Book{
                 Title="Sapiens",
                 GenreId=1,
-                PageCount = 255,
-                Author="Yuval Noah Hariri",
+                PageCount = 255
             },
                 new Book{
                     Title="1984",
                     GenreId=2,
-                    PageCount = 300,
-                    Author="George Orwell",
+                    PageCount = 300
             },
                 new Book{
                     Title="Fahrenheit 451",
                     GenreId=2,
-                    PageCount = 350,
-                    Author="Ray Bradbury",
+                    PageCount = 350
                 }
             );
+            
+            context.Authors.AddRange{
+                new Genre{
+                    FirstName="Yuval Noah",
+                    LastName="Hariri",
+                    BirthDate = new DateTime(1976,2,24)
+                    
+                },
+                new Genre{
+                    FirstName="George",
+                    LastName="Orwell",
+                    BirthDate = new DateTime(1903,6,25)
+                },
+                new Genre{
+                    FirstName="Ray",
+                    LastName="Bradbury",
+                    BirthDate = new DateTime(1920,8,22)
+                }                    
+            };
             //Database'e git değiştir komutunu girmek lazım, o da bu satır.
             context.SaveChanges();
         }
