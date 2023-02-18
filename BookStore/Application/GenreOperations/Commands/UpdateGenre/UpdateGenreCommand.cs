@@ -5,11 +5,11 @@ namespace BookStoreWebApi.Application.BookOperations.Commands.UpdateGenre
 {
     public class UpdateGenreCommand
     {
-        public UpdateBookModel Model { get; set; }
+        public UpdateGenreModel Model { get; set; }
         public int GenreId { get; set; }
-        private readonly BookStoreDbContext _dbContext;
+        private readonly IBookStoreDbContext _dbContext;
 
-        public GenreBookCommand(BookStoreDbContext dbContext)
+        public UpdateGenreCommand(IBookStoreDbContext dbContext)
         {
             _dbContext = dbContext;
         }
@@ -21,7 +21,7 @@ namespace BookStoreWebApi.Application.BookOperations.Commands.UpdateGenre
                 throw new InvalidOperationException("Güncellemek istediğiniz genre id'si databasede bulunmuyor.");
             }
             //Any() = Baktığı obje içerisinde en az 1 eşleşme bulursa true döner.
-            if(_dbContext.Genres.Any(x=>x.Name.ToLower() == Model.Name.ToLower() && x.Id != Model.Id))
+            if(_dbContext.Genres.Any(x=>x.Name.ToLower() == Model.Name.ToLower() && x.Id != GenreId))
             {
                 throw new InvalidOperationException("Bu kitap türü farklı bir id numarası ile database'de kayıtlı bulunmaktadır. ");
             }

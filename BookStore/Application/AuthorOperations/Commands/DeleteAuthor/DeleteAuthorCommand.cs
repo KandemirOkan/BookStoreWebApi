@@ -6,10 +6,10 @@ namespace BookStoreWebApi.Application.AuthorOperations.Commands.DeleteAuthor
 {
     public class DeleteAuthorCommand
     {
-        private readonly BookStoreDbContext _dbContext;
+        private readonly IBookStoreDbContext _dbContext;
         public int AuthorId { get; set; }
 
-        public DeleteAuthorCommand(BookStoreDbContext dbContext)
+        public DeleteAuthorCommand(IBookStoreDbContext dbContext)
         {
             _dbContext = dbContext;
         }
@@ -20,7 +20,7 @@ namespace BookStoreWebApi.Application.AuthorOperations.Commands.DeleteAuthor
             {
                 throw new InvalidOperationException("Geçersiz bir ID numarası girdiniz.");
             }
-            _dbContext.Author.Remove(author);
+            _dbContext.Authors.Remove(author);
             _dbContext.SaveChanges();
         }
     }

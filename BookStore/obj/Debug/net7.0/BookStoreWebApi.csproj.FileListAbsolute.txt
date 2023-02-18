@@ -41,11 +41,15 @@ C:\Users\Okan\Documents\GitHub\BookStoreWebApi\BookStore\bin\Debug\net7.0\BookSt
 C:\Users\Okan\Documents\GitHub\BookStoreWebApi\BookStore\bin\Debug\net7.0\BookStoreWebApi.runtimeconfig.json
 C:\Users\Okan\Documents\GitHub\BookStoreWebApi\BookStore\bin\Debug\net7.0\BookStoreWebApi.dll
 C:\Users\Okan\Documents\GitHub\BookStoreWebApi\BookStore\bin\Debug\net7.0\BookStoreWebApi.pdb
+C:\Users\Okan\Documents\GitHub\BookStoreWebApi\BookStore\bin\Debug\net7.0\AutoMapper.dll
+C:\Users\Okan\Documents\GitHub\BookStoreWebApi\BookStore\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\Okan\Documents\GitHub\BookStoreWebApi\BookStore\bin\Debug\net7.0\FluentValidation.dll
 C:\Users\Okan\Documents\GitHub\BookStoreWebApi\BookStore\bin\Debug\net7.0\Microsoft.AspNetCore.OpenApi.dll
 C:\Users\Okan\Documents\GitHub\BookStoreWebApi\BookStore\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.dll
 C:\Users\Okan\Documents\GitHub\BookStoreWebApi\BookStore\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Abstractions.dll
 C:\Users\Okan\Documents\GitHub\BookStoreWebApi\BookStore\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.InMemory.dll
 C:\Users\Okan\Documents\GitHub\BookStoreWebApi\BookStore\bin\Debug\net7.0\Microsoft.OpenApi.dll
+C:\Users\Okan\Documents\GitHub\BookStoreWebApi\BookStore\bin\Debug\net7.0\Newtonsoft.Json.dll
 C:\Users\Okan\Documents\GitHub\BookStoreWebApi\BookStore\bin\Debug\net7.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\Okan\Documents\GitHub\BookStoreWebApi\BookStore\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\Okan\Documents\GitHub\BookStoreWebApi\BookStore\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -70,7 +74,3 @@ C:\Users\Okan\Documents\GitHub\BookStoreWebApi\BookStore\obj\Debug\net7.0\refint
 C:\Users\Okan\Documents\GitHub\BookStoreWebApi\BookStore\obj\Debug\net7.0\BookStoreWebApi.pdb
 C:\Users\Okan\Documents\GitHub\BookStoreWebApi\BookStore\obj\Debug\net7.0\BookStoreWebApi.genruntimeconfig.cache
 C:\Users\Okan\Documents\GitHub\BookStoreWebApi\BookStore\obj\Debug\net7.0\ref\BookStoreWebApi.dll
-C:\Users\Okan\Documents\GitHub\BookStoreWebApi\BookStore\bin\Debug\net7.0\AutoMapper.dll
-C:\Users\Okan\Documents\GitHub\BookStoreWebApi\BookStore\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
-C:\Users\Okan\Documents\GitHub\BookStoreWebApi\BookStore\bin\Debug\net7.0\FluentValidation.dll
-C:\Users\Okan\Documents\GitHub\BookStoreWebApi\BookStore\bin\Debug\net7.0\Newtonsoft.Json.dll

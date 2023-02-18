@@ -7,23 +7,23 @@ namespace BookStoreWebApi.Application.GenreOperations.Commands.CreateGenre
     public class CreateGenreCommand
     {
         public CreateGenreModel Model { get; set; }
-        private readonly BookStoreDbContext _dbContext;
+        private readonly IBookStoreDbContext _dbContext;
         private readonly IMapper _mapper;
 
-        public CreateGenreCommand(BookStoreDbContext dbContext,IMapper mapper)
+        public CreateGenreCommand(IBookStoreDbContext dbContext,IMapper mapper)
         {
             _dbContext = dbContext;
             _mapper = mapper;
         }
         public void Handle()
         {
-            var genre = _dbContext.Genres.SingleOrDefault(x=>x.Id==Model.Id);
+            var genre = _dbContext.Genres.SingleOrDefault(x=>x.Name == Model.Name);
             if (genre is not null)
             {
                 throw new InvalidOperationException("Database'inizde Bu Id'ye sahip bir Genre bulunmaktadır.");
             }
             genre = _mapper.Map<Genre>(Model);
-            _dbContext.Add(genre);
+            _dbContext.Genres.Add(genre);
             _dbContext.SaveChanges();
         }
     }

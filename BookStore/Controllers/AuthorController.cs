@@ -1,8 +1,8 @@
 using AutoMapper;
-using BookStoreWebApi.Application.BookOperations.Commands.CreateBook;
-using BookStoreWebApi.Application.BookOperations.Commands.DeleteBook;
-using BookStoreWebApi.Application.BookOperations.Commands.UpdateBook;
-using BookStoreWebApi.Application.BookOperations.Queries.GetBooks;
+using BookStoreWebApi.Application.AuthorOperations.Commands.CreateAuthor;
+using BookStoreWebApi.Application.AuthorOperations.Commands.DeleteAuthor;
+using BookStoreWebApi.Application.AuthorOperations.Commands.UpdateAuthor;
+using BookStoreWebApi.Application.AuthorOperations.Quearies;
 using BookStoreWebApi.DBOperations;
 using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
@@ -13,10 +13,10 @@ namespace BookStoreWebApi.Controllers.AuthorController;
 [Route("[controller]")]
 public class AuthorController : ControllerBase
 {
-    private readonly BookStoreDbContext context;
+    private readonly IBookStoreDbContext context;
     private readonly IMapper _mapper;
 
-    public AuthorController(BookStoreDbContext _context,IMapper mapper)
+    public AuthorController(IBookStoreDbContext _context,IMapper mapper)
     {
         context = _context;
         _mapper = mapper;
@@ -25,7 +25,7 @@ public class AuthorController : ControllerBase
     [HttpGet]
     public IActionResult GetAuthors()
     {
-       GetAuthorsQuery query = new GetAuthorsQuery(context,_mapper);
+       GetAuthorQuery query = new(context,_mapper);
        var result = query.Handle();
        return Ok(result);
     }
@@ -33,19 +33,19 @@ public class AuthorController : ControllerBase
     [HttpGet("{id}")]
     public IActionResult GetAuthorsById(int id)
     {
-        GetAuthorsById query = new GetAuthorsById(context,_mapper);
-        AuthorsViewIdModel result;
+        GetAuthorById query = new GetAuthorById(context,_mapper);
+        AuthorViewIdModel result;
         query.AuthorId = id;
-        GetAuthorsByIdValidator validator = new GetAuthorsByIdValidator();
+        GetAuthorByIdValidator validator = new GetAuthorByIdValidator();
         validator.ValidateAndThrow(query);
         result = query.Handle();
         return Ok(result);
     }
 
     [HttpPost]
-    public IActionResult AddAuthor([FromBody] CreateBookModel newAuthor)
+    public IActionResult AddAuthor([FromBody] CreateAuthorModel newAuthor)
     {
-        CreateBookCommand command = new CreateBookCommand(context,_mapper);
+        CreateAuthorCommand command = new CreateAuthorCommand(context,_mapper);
         command.Model = newAuthor;
         CreateAuthorCommandValidator validator = new CreateAuthorCommandValidator();
         validator.ValidateAndThrow(command);
@@ -54,12 +54,12 @@ public class AuthorController : ControllerBase
     }
 
     [HttpPut("{id}")]
-    public IActionResult UpdateBook(int id,[FromBody] UpdateAuthorModel updateAuthor)
+    public IActionResult UpdateAuthor(int id,[FromBody] UpdateAuthorModel updateAuthor)
     {
-        UpdateAuthorCommand command = new UpdateBookCommand(context);
+        UpdateAuthorCommand command = new UpdateAuthorCommand(context,_mapper);
 
         command.AuthorId = id;
-        command.Model = updatebook;
+        command.Model = updateAuthor;
         UpdateAuthorCommandValidator validator = new UpdateAuthorCommandValidator();
         validator.ValidateAndThrow(command);
         command.Handle(); 
@@ -70,7 +70,7 @@ public class AuthorController : ControllerBase
     public IActionResult DeleteAuthor(int id)
     {
         DeleteAuthorCommand command = new DeleteAuthorCommand(context);
-        command.BookId=id;
+        command.AuthorId=id;
         DeleteAuthorCommandValidator validator = new DeleteAuthorCommandValidator();
         validator.ValidateAndThrow(command);
         command.Handle();

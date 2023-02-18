@@ -7,23 +7,23 @@ namespace BookStoreWebApi.Application.AuthorOperations.Commands.CreateAuthor
     public class CreateAuthorCommand
     {
         public CreateAuthorModel Model { get; set; }
-        private readonly BookStoreDbContext _dbContext;
+        private readonly IBookStoreDbContext _dbContext;
         private readonly IMapper _mapper;
 
-        public CreateGenreCommand(BookStoreDbContext dbContext,IMapper mapper)
+        public CreateAuthorCommand(IBookStoreDbContext dbContext,IMapper mapper)
         {
             _dbContext = dbContext;
             _mapper = mapper;
         }
         public void Handle()
         {
-            var author = _dbContext.Authors.SingleOrDefault(x=>x.Id==Model.Id);
+            var author = _dbContext.Authors.SingleOrDefault(x=>x.FirstName==Model.FirstName && x.LastName==Model.LastName);
             if (author is not null)
             {
-                throw new InvalidOperationException("Database'inizde Bu Id'ye sahip bir yazar bulunmaktadır.");
+                throw new InvalidOperationException("Database'inizde bu isme sahip bir yazar bulunmaktadır.");
             }
             author = _mapper.Map<Author>(Model);
-            _dbContext.Add(author);
+            _dbContext.Authors.Add(author);
             _dbContext.SaveChanges();
         }
     }

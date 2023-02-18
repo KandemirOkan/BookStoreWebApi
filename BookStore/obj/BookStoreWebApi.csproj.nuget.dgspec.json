@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Okan\\Documents\\GitHub\\BookStoreWebApi\\BookStore\\BookStoreWebApi.csproj": {}
+    "c:\\Users\\Okan\\Documents\\GitHub\\BookStoreWebApi\\BookStore\\BookStoreWebApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Okan\\Documents\\GitHub\\BookStoreWebApi\\BookStore\\BookStoreWebApi.csproj": {
+    "c:\\Users\\Okan\\Documents\\GitHub\\BookStoreWebApi\\BookStore\\BookStoreWebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Okan\\Documents\\GitHub\\BookStoreWebApi\\BookStore\\BookStoreWebApi.csproj",
+        "projectUniqueName": "c:\\Users\\Okan\\Documents\\GitHub\\BookStoreWebApi\\BookStore\\BookStoreWebApi.csproj",
         "projectName": "BookStoreWebApi",
-        "projectPath": "C:\\Users\\Okan\\Documents\\GitHub\\BookStoreWebApi\\BookStore\\BookStoreWebApi.csproj",
+        "projectPath": "c:\\Users\\Okan\\Documents\\GitHub\\BookStoreWebApi\\BookStore\\BookStoreWebApi.csproj",
         "packagesPath": "C:\\Users\\Okan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Okan\\Documents\\GitHub\\BookStoreWebApi\\BookStore\\obj\\",
+        "outputPath": "c:\\Users\\Okan\\Documents\\GitHub\\BookStoreWebApi\\BookStore\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

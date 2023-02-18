@@ -1,10 +1,11 @@
 using AutoMapper;
 using BookStoreWebApi.DBOperations;
 using BookStoreWebApi.Entities;
+using FluentValidation;
 
 namespace BookStoreWebApi.Application.GenreOperations.Commands.CreateGenre
 {
-    public class CreateGenreCommandValidator
+    public class CreateGenreCommandValidator : AbstractValidator<CreateGenreCommand>
     {
             public CreateGenreCommandValidator()
         {

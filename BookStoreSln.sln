@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookStoreWebApi", "BookStoreWebApi\BookStoreWebApi.csproj", "{B5EF8133-EFFE-4E0D-9F2F-AE6F90208840}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{5F284DB8-246F-4B29-B457-5D01C0582279}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi.UnitTests", "Tests\WebApi.UnitTests\WebApi.UnitTests.csproj", "{0C8F3213-5F44-4665-A508-D248527DDF18}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookStoreWebApi", "BookStore\BookStoreWebApi.csproj", "{3280BAA6-0FAD-441F-9A07-797995063B70}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,5 +22,16 @@ Global
 		{B5EF8133-EFFE-4E0D-9F2F-AE6F90208840}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B5EF8133-EFFE-4E0D-9F2F-AE6F90208840}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B5EF8133-EFFE-4E0D-9F2F-AE6F90208840}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C8F3213-5F44-4665-A508-D248527DDF18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C8F3213-5F44-4665-A508-D248527DDF18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C8F3213-5F44-4665-A508-D248527DDF18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C8F3213-5F44-4665-A508-D248527DDF18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3280BAA6-0FAD-441F-9A07-797995063B70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3280BAA6-0FAD-441F-9A07-797995063B70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3280BAA6-0FAD-441F-9A07-797995063B70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3280BAA6-0FAD-441F-9A07-797995063B70}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0C8F3213-5F44-4665-A508-D248527DDF18} = {5F284DB8-246F-4B29-B457-5D01C0582279}
 	EndGlobalSection
 EndGlobal

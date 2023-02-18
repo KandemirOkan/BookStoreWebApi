@@ -7,9 +7,9 @@ namespace BookStoreWebApi.Application.BookOperations.Commands.UpdateBook
     {
         public UpdateBookModel Model { get; set; }
         public int BookId { get; set; }
-        private readonly BookStoreDbContext _dbContext;
+        private readonly IBookStoreDbContext _dbContext;
 
-        public UpdateBookCommand(BookStoreDbContext dbContext)
+        public UpdateBookCommand(IBookStoreDbContext dbContext)
         {
             _dbContext = dbContext;
         }
@@ -23,7 +23,6 @@ namespace BookStoreWebApi.Application.BookOperations.Commands.UpdateBook
             book.GenreId = Model.GenreId != default ? Model.GenreId : book.GenreId;
             book.PageCount = Model.PageCount != default ? Model.PageCount : book.PageCount;
             book.Title = Model.Title != default ? Model.Title : book.Title;
-            book.Author = Model.Author != default ? Model.Author : book.Author;
             _dbContext.SaveChanges();
         }
     }
