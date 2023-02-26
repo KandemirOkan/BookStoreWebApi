@@ -5,10 +5,11 @@ using BookStoreWebApi.Application.BookOperations.Commands.UpdateBook;
 using BookStoreWebApi.Application.BookOperations.Queries.GetBooks;
 using BookStoreWebApi.DBOperations;
 using FluentValidation;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BookStoreWebApi.Controllers.BookController;
-
+[Authorize]
 [ApiController]
 [Route("[controller]")]
 public class BookController : ControllerBase
@@ -22,7 +23,7 @@ public class BookController : ControllerBase
         _mapper = mapper;
     }
 
-    [HttpGet]
+    [HttpGet("[action]")]
     public IActionResult GetBooks()
     {
        GetBooksQuery query = new GetBooksQuery(context,_mapper);
@@ -30,7 +31,7 @@ public class BookController : ControllerBase
        return Ok(result);
     }
 
-    [HttpGet("{id}")]
+    [HttpGet("[action]/{id}")]
     public IActionResult GetBooksById(int id)
     {
         GetBooksById query = new GetBooksById(context,_mapper);
@@ -42,7 +43,7 @@ public class BookController : ControllerBase
         return Ok(result);
     }
 
-    [HttpPost]
+    [HttpPost("[action]")]
     public IActionResult AddBook([FromBody] CreateBookModel newBook)
     {
         CreateBookCommand command = new CreateBookCommand(context,_mapper);
@@ -53,7 +54,7 @@ public class BookController : ControllerBase
         return Ok();
     }
 
-    [HttpPut("{id}")]
+    [HttpPut("[action]/{id}")]
     public IActionResult UpdateBook(int id,[FromBody] UpdateBookModel updatebook)
     {
         UpdateBookCommand command = new UpdateBookCommand(context);
@@ -66,7 +67,7 @@ public class BookController : ControllerBase
         return Ok();
     }
 
-    [HttpDelete("{id}")]
+    [HttpDelete("[action]/{id}")]
     public IActionResult DeleteBook(int id)
     {
         DeleteBookCommand command = new DeleteBookCommand(context);

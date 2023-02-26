@@ -29,4 +29,19 @@
     <ProjectReference Include="..\..\BookStore\BookStoreWebApi.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Application\AuthorOperations\Commands\CreateAuthor\" />
+    <Folder Include="Application\AuthorOperations\Commands\DeleteAuthor\" />
+    <Folder Include="Application\AuthorOperations\Commands\UpdateAuthor\" />
+    <Folder Include="Application\AuthorOperations\Queries\" />
+    <Folder Include="Application\BookOperations\Commands\CreateAuthor\" />
+    <Folder Include="Application\BookOperations\Commands\DeleteAuthor\" />
+    <Folder Include="Application\BookOperations\Commands\UpdateAuthor\" />
+    <Folder Include="Application\BookOperations\Queries\" />
+    <Folder Include="Application\GenreOperations\Commands\CreateAuthor\" />
+    <Folder Include="Application\GenreOperations\Commands\DeleteAuthor\" />
+    <Folder Include="Application\GenreOperations\Commands\UpdateAuthor\" />
+    <Folder Include="Application\GenreOperations\Queries\" />
+  </ItemGroup>
+
 </Project>

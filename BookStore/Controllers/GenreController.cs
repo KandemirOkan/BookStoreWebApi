@@ -22,7 +22,7 @@ public class GenreController : ControllerBase
         _mapper = mapper;
     }
 
-    [HttpGet]
+    [HttpGet("[action]")]
     public IActionResult GetGenres()
     {
        GetGenreQuery query = new GetGenreQuery(context,_mapper);
@@ -30,7 +30,7 @@ public class GenreController : ControllerBase
        return Ok(result);
     }
 
-    [HttpGet("{id}")]
+    [HttpGet("[action]/{id}")]
     public IActionResult GetGenresById(int id)
     {
         GetGenreById query = new GetGenreById(context,_mapper);
@@ -42,7 +42,7 @@ public class GenreController : ControllerBase
         return Ok(result);
     }
 
-    [HttpPost]
+    [HttpPost("[action]")]
     public IActionResult AddGenre([FromBody] CreateGenreModel newGenre)
     {
         CreateGenreCommand command = new CreateGenreCommand(context,_mapper);
@@ -53,7 +53,7 @@ public class GenreController : ControllerBase
         return Ok();
     }
 
-    [HttpPut("{id}")]
+    [HttpPut("[action]/{id}")]
     public IActionResult UpdateGenre(int id,[FromBody] UpdateGenreModel updateGenre)
     {
         UpdateGenreCommand command = new UpdateGenreCommand(context);
@@ -66,7 +66,7 @@ public class GenreController : ControllerBase
         return Ok();
     }
 
-    [HttpDelete("{id}")]
+    [HttpDelete("[action]/{id}")]
     public IActionResult DeleteGenre(int id)
     {
         DeleteGenreCommand command = new DeleteGenreCommand(context);

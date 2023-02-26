@@ -22,7 +22,7 @@ public class AuthorController : ControllerBase
         _mapper = mapper;
     }
 
-    [HttpGet]
+    [HttpGet("[action]")]
     public IActionResult GetAuthors()
     {
        GetAuthorQuery query = new(context,_mapper);
@@ -30,7 +30,7 @@ public class AuthorController : ControllerBase
        return Ok(result);
     }
 
-    [HttpGet("{id}")]
+    [HttpGet("[action]/{id}")]
     public IActionResult GetAuthorsById(int id)
     {
         GetAuthorById query = new GetAuthorById(context,_mapper);
@@ -42,7 +42,7 @@ public class AuthorController : ControllerBase
         return Ok(result);
     }
 
-    [HttpPost]
+    [HttpPost("[action]")]
     public IActionResult AddAuthor([FromBody] CreateAuthorModel newAuthor)
     {
         CreateAuthorCommand command = new CreateAuthorCommand(context,_mapper);
@@ -53,7 +53,7 @@ public class AuthorController : ControllerBase
         return Ok();
     }
 
-    [HttpPut("{id}")]
+    [HttpPut("[action]/{id}")]
     public IActionResult UpdateAuthor(int id,[FromBody] UpdateAuthorModel updateAuthor)
     {
         UpdateAuthorCommand command = new UpdateAuthorCommand(context,_mapper);
@@ -66,7 +66,7 @@ public class AuthorController : ControllerBase
         return Ok();
     }
 
-    [HttpDelete("{id}")]
+    [HttpDelete("[action]/{id}")]
     public IActionResult DeleteAuthor(int id)
     {
         DeleteAuthorCommand command = new DeleteAuthorCommand(context);

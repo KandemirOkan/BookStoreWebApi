@@ -1,10 +1,12 @@
 using AutoMapper;
+using BookStoreWebApi.Common;
 using BookStoreWebApi.DBOperations;
 using Microsoft.EntityFrameworkCore;
+using WebApi.UnitTests.TestsSetup;
 
 namespace TestSetup
 {
-    public class CommonTextFixture
+    public class CommonTestFixture
     {
         public BookStoreDbContext DbContext { get; set; }
         public IMapper Mapper { get; set; }
@@ -19,7 +21,7 @@ namespace TestSetup
         DbContext.AddGenres();
         DbContext.SaveChanges();
 
-        Mapper = new MapperConfiguration(config => { config.AddProfile<AutoMapperProfile>(); }).CreateMapper();
+        Mapper = new MapperConfiguration(config => { config.AddProfile<MappingProfile>();}).CreateMapper();
     }
     }
 }

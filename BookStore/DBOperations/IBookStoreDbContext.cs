@@ -9,6 +9,8 @@ public interface IBookStoreDbContext
     public DbSet<Genre> Genres { get; set; }
     public DbSet<Author> Authors {get;set;}
 
+    public DbSet<User> Users {get;set;}
+
     int SaveChanges();
 }
 }
