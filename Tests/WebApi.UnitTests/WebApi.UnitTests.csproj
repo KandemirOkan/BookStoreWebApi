@@ -9,6 +9,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Application\BookOperations\Commands\CreateAuthor\**" />
+    <Compile Remove="Application\BookOperations\Commands\DeleteAuthor\**" />
+    <Compile Remove="Application\BookOperations\Commands\UpdateAuthor\**" />
+    <EmbeddedResource Remove="Application\BookOperations\Commands\CreateAuthor\**" />
+    <EmbeddedResource Remove="Application\BookOperations\Commands\DeleteAuthor\**" />
+    <EmbeddedResource Remove="Application\BookOperations\Commands\UpdateAuthor\**" />
+    <None Remove="Application\BookOperations\Commands\CreateAuthor\**" />
+    <None Remove="Application\BookOperations\Commands\DeleteAuthor\**" />
+    <None Remove="Application\BookOperations\Commands\UpdateAuthor\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="FluentAssertions" Version="6.10.0" />
     <PackageReference Include="Microsoft.EntityFrameWorkCore" Version="7.0.3" />
     <PackageReference Include="Microsoft.EntityFrameWorkCore.InMemory" Version="7.0.3" />
@@ -30,14 +42,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Application\AuthorOperations\Commands\CreateAuthor\" />
     <Folder Include="Application\AuthorOperations\Commands\DeleteAuthor\" />
     <Folder Include="Application\AuthorOperations\Commands\UpdateAuthor\" />
     <Folder Include="Application\AuthorOperations\Queries\" />
-    <Folder Include="Application\BookOperations\Commands\CreateAuthor\" />
-    <Folder Include="Application\BookOperations\Commands\DeleteAuthor\" />
-    <Folder Include="Application\BookOperations\Commands\UpdateAuthor\" />
-    <Folder Include="Application\BookOperations\Queries\" />
     <Folder Include="Application\GenreOperations\Commands\CreateAuthor\" />
     <Folder Include="Application\GenreOperations\Commands\DeleteAuthor\" />
     <Folder Include="Application\GenreOperations\Commands\UpdateAuthor\" />

@@ -65,6 +65,16 @@ public class DataGenerator
                     BirthDate = new DateTime(1920,08,22)
                 }                  
             );
+
+            context.Users.AddRange(
+                new User
+                {
+                    Name = "Okan",
+                    Surname = "Kandemir",
+                    Email = "okan-kan@hotmail.com",
+                    Password = "1234"
+                }
+            );
             //Database'e git değiştir komutunu girmek lazım, o da bu satır.
             context.SaveChanges();
         }
